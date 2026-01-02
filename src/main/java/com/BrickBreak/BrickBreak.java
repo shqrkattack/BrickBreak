@@ -46,8 +46,8 @@ public class BrickBreak extends JPanel implements KeyListener, ActionListener {
 		mapWidth = width;
 		mapHeight = height;
 		totalBricks = mapWidth * mapHeight;
-		player = new Paddle(310, 550, 100, 8);
-		ball = new Ball(350, 450, 20);
+		player = new Paddle(310, 550, 100, 200, 0);
+		ball = new Ball(350, 450, 20, 1,-2);
 
 		map = new Brick[mapHeight][mapWidth];
 		setFocusable(true);
@@ -195,6 +195,7 @@ public class BrickBreak extends JPanel implements KeyListener, ActionListener {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		player.setVelocity(0);
 	}
 
 	@Override
